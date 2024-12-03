@@ -7,7 +7,7 @@ export const SLUG_RX = /(?<=\nslug: ).*?$/gm;
 
 export async function* walkSync(dir) {
   const files = await fs.readdir(dir, { withFileTypes: true });
-  for (const file of files) {
+  for (const file of files) { 
     if (file.isDirectory()) {
       yield* walkSync(path.join(dir, file.name));
     } else {
